@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { supabase } from "@/lib/supabase";
 
 // ==========================================
 // DATA PORTOFOLIO - RAKA FEBRIAN
@@ -175,19 +176,33 @@ export default function Home() {
       ? PROJECTS
       : PROJECTS.filter((p) => p.category === selectedCategory);
 
-  // Form Submit Handler
-  const handleSubmit = (e: React.FormEvent) => {
+  // Form Submit Handler (Supabase)
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulasi pengiriman data API
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      const { error } = await supabase.from("messages").insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+      ]);
+
+      if (error) {
+        throw error;
+      }
+
       setSubmitStatus("success");
       setFormData({ name: "", email: "", message: "" });
-
+    } catch (err) {
+      console.error("Gagal mengirim pesan ke Supabase:", err);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
       setTimeout(() => setSubmitStatus("idle"), 5000);
-    }, 1200);
+    }
   };
 
   const navLinks = [
