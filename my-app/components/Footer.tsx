@@ -1,7 +1,36 @@
+"use client";
+
 import React from "react";
-import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+
+const FOOTER_LINKS = [
+  { name: "Home", id: "home" },
+  { name: "About", id: "about" },
+  { name: "Experience", id: "experience" },
+  { name: "Education", id: "education" },
+  { name: "Projects", id: "projects" },
+  { name: "Contact", id: "contact" },
+];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    if (pathname === "/") {
+      const elem = document.getElementById(sectionId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      router.push(`/#${sectionId}`);
+    }
+  };
+
   return (
     <footer className="relative z-10 py-12 border-t border-slate-800/80 bg-slate-950/60 backdrop-blur-md text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -17,17 +46,21 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-semibold">
-            <Link href="/" className="hover:text-cyan-400 transition-colors">Home</Link>
-            <Link href="/about" className="hover:text-cyan-400 transition-colors">About</Link>
-            <Link href="/experience" className="hover:text-cyan-400 transition-colors">Experience</Link>
-            <Link href="/education" className="hover:text-cyan-400 transition-colors">Education</Link>
-            <Link href="/projects" className="hover:text-cyan-400 transition-colors">Projects</Link>
-            <Link href="/contact" className="hover:text-cyan-400 transition-colors">Contact</Link>
+            {FOOTER_LINKS.map((link) => (
+              <a
+                key={link.name}
+                href={`#${link.id}`}
+                onClick={(e) => handleNavClick(e, link.id)}
+                className="hover:text-cyan-400 transition-colors cursor-pointer"
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
 
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/mrrakaa2345-design"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -38,7 +71,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="mailto:raka@example.com"
+              href="mailto:raka.febrian@example.com"
               aria-label="Email"
               className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 text-slate-400 hover:text-cyan-400 transition-all"
             >
