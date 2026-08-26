@@ -7,28 +7,42 @@ import ProjectCard from "@/components/ProjectCard";
 import { TECH_STACK, EXPERIENCES, EDUCATION_TIMELINE, PROJECTS } from "@/lib/data";
 import { supabase } from "@/lib/supabase";
 
-const STATS = [
-  { value: "3+", label: "Tahun Pengalaman" },
-  { value: "20+", label: "Proyek Terselesaikan" },
-  { value: "99%", label: "Skor Kepuasan Klien" },
-  { value: "10+", label: "Teknologi & Tools" },
+const SKILLS = [
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "TypeScript",
+  "React.js",
+  "Next.js",
+  "Tailwind CSS",
+  "PHP",
+  "Laravel",
+  "MySQL",
+  "Supabase",
+  "Figma",
+  "Git & GitHub",
 ];
 
-const SKILL_CATEGORIES = [
+const SPECIALIZATIONS = [
   {
-    title: "Frontend Development",
-    desc: "Membangun antarmuka modern yang cepat, responsif, dan interaktif.",
-    skills: ["React.js", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS", "HTML5 & CSS3"],
+    title: "Front-End Development",
+    desc: "Membangun web app modern dengan React, Next.js, dan Tailwind CSS yang teroptimasi performanya.",
+    tag: "Frontend",
   },
   {
-    title: "Backend & Database",
-    desc: "Integrasi API, arsitektur database, dan serverless backend.",
-    skills: ["Node.js", "Supabase", "PostgreSQL", "REST APIs", "GraphQL"],
+    title: "UI/UX Design & Prototyping",
+    desc: "Merancang wireframe, user flow, dan desain antarmuka bernuansa modern dan rapi di Figma.",
+    tag: "Design",
   },
   {
-    title: "Tools & Workflow",
-    desc: "Efisiensi alur kerja pengembang dengan tooling modern.",
-    skills: ["Git & GitHub", "Vercel", "Figma", "VS Code", "Postman", "Turbopack"],
+    title: "Full-Stack Integration",
+    desc: "Menghubungkan antarmuka ke backend dan database serverless seperti Supabase, Laravel, dan REST API.",
+    tag: "Fullstack",
+  },
+  {
+    title: "Interactive Interfaces",
+    desc: "Menambahkan animasi halus, efek hover, dan transisi visual yang membuat web terasa hidup.",
+    tag: "Motion",
   },
 ];
 
@@ -58,7 +72,7 @@ export default function Home() {
 
   // Typing Effect
   const [textIndex, setTextIndex] = useState(0);
-  const roles = ["Front-End Developer", "UI/UX Enthusiast", "React & Vue Specialist"];
+  const roles = ["Front-End Developer", "UI/UX Enthusiast", "React & Next.js Developer"];
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -147,13 +161,13 @@ export default function Home() {
       <section id="home" className="px-4 sm:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 sm:gap-16 min-h-[80vh] pt-8 sm:pt-14 scroll-mt-28">
         <div className="flex-1 space-y-6 sm:space-y-8 text-center md:text-left" data-aos="fade-right">
           {/* Status Badge */}
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold shadow-sm hover:scale-105 transition-transform duration-300">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-            Available for Work
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+            <span>Available for Work & Projects</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-tight">
-            Hi, Saya <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-500 animate-pulse">Raka Febrian</span>
+            Hi, Saya <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400">Raka Febrian</span>
           </h1>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-200 min-h-[40px] flex items-center justify-center md:justify-start gap-2">
@@ -162,7 +176,7 @@ export default function Home() {
           </h2>
 
           <p className="text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl font-normal mx-auto md:mx-0">
-            Berfokus pada pembuatan antarmuka web yang bersih, responsif, dan kaya interaksi visual dengan performa tinggi.
+            Siswa SIJA di SMK Telkom Sidoarjo yang berfokus pada perancangan antarmuka web modern, cepat, dan nyaman digunakan.
           </p>
 
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-5 pt-2 sm:pt-4">
@@ -183,17 +197,30 @@ export default function Home() {
 
         {/* Profile Frame with Glow */}
         <div className="relative group w-full max-w-[280px] sm:max-w-sm md:w-auto" data-aos="zoom-in" data-aos-delay="200">
-          <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition duration-700 group-hover:scale-110"></div>
+          <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 rounded-3xl blur-2xl opacity-40 group-hover:opacity-80 transition duration-700 group-hover:scale-105"></div>
           
-          <div className="relative w-full aspect-[4/5] rounded-2xl border-2 border-dashed border-slate-700 bg-slate-900/90 p-4 shadow-2xl flex flex-col items-center justify-center group-hover:border-cyan-500/50 transition-all duration-500 group-hover:-translate-y-2">
-            <div className="w-full h-full rounded-xl border border-slate-800 bg-slate-950/60 flex flex-col items-center justify-center p-6 text-center">
-              <div className="w-20 h-20 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-cyan-500/50 transition-all duration-300 shadow-md">
-                <svg className="w-10 h-10 text-slate-500 group-hover:text-cyan-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
+          <div className="relative w-full aspect-[4/5] rounded-3xl border border-slate-700/80 bg-slate-900/90 p-5 shadow-2xl flex flex-col justify-between group-hover:border-cyan-500/50 transition-all duration-500">
+            <div className="flex items-center justify-between text-xs font-mono text-slate-500">
+              <span>PROFILE</span>
+              <span className="text-cyan-400 font-bold">2026</span>
+            </div>
+
+            <div className="my-auto text-center space-y-4">
+              <div className="w-24 h-24 mx-auto rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-3xl font-bold text-white shadow-md group-hover:scale-105 group-hover:border-cyan-500/50 transition-all duration-300">
+                RF
               </div>
-              <p className="text-base font-bold text-slate-300 mb-1">Foto Profile</p>
-              <p className="text-xs font-mono text-slate-500">Area pasfoto / portrait</p>
+              <div>
+                <p className="text-lg font-bold text-white">Raka Febrian</p>
+                <p className="text-xs font-mono text-cyan-400 mt-0.5">Front-End / UI UX</p>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <span>Sidoarjo, Indonesia</span>
+              <span className="text-emerald-400 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Available
+              </span>
             </div>
           </div>
         </div>
@@ -202,88 +229,96 @@ export default function Home() {
       {/* 2. TECH STACK MARQUEE */}
       <TechMarquee />
 
-      {/* 3. ABOUT SECTION */}
-      <section id="about" className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16 scroll-mt-28">
-        <div className="text-center space-y-4" data-aos="fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
-            <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-            <span>Mengenal Lebih Dekat</span>
+      {/* 3. ABOUT SECTION (CLEAN BENTO & HUMAN TONE) */}
+      <section id="about" className="max-w-6xl mx-auto px-4 sm:px-8 space-y-12 scroll-mt-28">
+        <div className="space-y-4 text-center sm:text-left" data-aos="fade-up">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+            <span>02 / TENTANG SAYA</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white">Tentang Saya</h2>
-          <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Membangun produk digital dengan dedikasi tinggi pada performa, aksesibilitas, dan keindahan visual.
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+            Menghubungkan Desain & Logika Kode
+          </h2>
+          <p className="text-slate-400 text-base sm:text-lg max-w-2xl">
+            Membangun website yang tidak hanya menarik saat pertama dilihat, tapi juga ringan dan nyaman saat digunakan.
           </p>
         </div>
 
-        {/* Stats Counter Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" data-aos="fade-up">
-          {STATS.map((stat, idx) => (
+        {/* Story & Background Card */}
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] items-stretch" data-aos="fade-up">
+          <div className="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 space-y-5 flex flex-col justify-between">
+            <div className="space-y-4">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest">
+                Latar Belakang
+              </span>
+              <h3 className="text-2xl font-bold text-white leading-tight">
+                Siswa SIJA di SMK Telkom Sidoarjo
+              </h3>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Di jurusan SIJA (Sistem Informasi, Jaringan, dan Aplikasi), saya mendalami fondasi komputasi dan rekayasa web. Mulai dari HTML, CSS, JavaScript, PHP, MySQL, hingga framework modern seperti React dan Next.js.
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono text-slate-400">
+              <span>Fokus: Front-End & UI/UX</span>
+              <span className="text-cyan-400">Sidoarjo, Jawa Timur</span>
+            </div>
+          </div>
+
+          <div className="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 space-y-5 flex flex-col justify-between">
+            <div className="space-y-4">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest">
+                Prinsip Desain & Kode
+              </span>
+              <h3 className="text-2xl font-bold text-white leading-tight">
+                Sederhana, Responsif, dan Bertenaga
+              </h3>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Saya selalu memperhatikan detail interaksi mikro, kebersihan struktur komponen, dan aksesibilitas agar setiap antarmuka yang dibuat memiliki performa maksimal.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2 pt-2">
+              {["Clean UI", "Responsive Design", "Fast Loading", "Accessible"].map((trait) => (
+                <span key={trait} className="px-3 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono">
+                  {trait}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Specialization Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2" data-aos="fade-up">
+          {SPECIALIZATIONS.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 text-center space-y-2 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1"
+              className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1 space-y-2.5"
             >
-              <p className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                {stat.value}
-              </p>
-              <p className="text-xs sm:text-sm font-semibold text-slate-400">{stat.label}</p>
+              <div className="flex items-center justify-between text-xs font-mono">
+                <span className="text-cyan-400 font-bold uppercase">{item.tag}</span>
+                <span className="text-slate-600">0{idx + 1}</span>
+              </div>
+              <h4 className="text-lg font-bold text-white">{item.title}</h4>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* Philosophy & Focus */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-stretch" data-aos="fade-up">
-          <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/80 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-xl">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-white">Filosofi Pengembangan</h3>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Bagi saya, kode bukan hanya sekadar instruksi komputer, melainkan jembatan antara kebutuhan manusia dan kecanggihan teknologi. Saya selalu mengutamakan:
-            </p>
-            <ul className="space-y-3 pt-2 text-slate-300 text-sm sm:text-base">
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-                <strong>Performa & Aksesibilitas:</strong> Kecepatan muat kilat dan ramah untuk semua pengguna.
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-                <strong>Arsitektur Modular:</strong> Kode yang rapi, mudah dirawat, dan teruji.
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-                <strong>Detail Visual:</strong> Micro-interactions dan transisi halus yang memanjakan mata.
-              </li>
-            </ul>
-          </div>
-
-          <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/80 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-xl">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-white">Keahlian Spesialisasi</h3>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Teknologi utama yang saya kuasai dan terapkan dalam pengembangan proyek:
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              {SKILL_CATEGORIES.map((cat, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-2">
-                  <p className="text-xs font-mono font-bold text-cyan-400 uppercase">{cat.title}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {cat.skills.slice(0, 4).map((s, i) => (
-                      <span key={i} className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Skills Tag Cloud */}
+        <div className="space-y-4 pt-4" data-aos="fade-up">
+          <p className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest">
+            Toolkit & Teknologi
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {SKILLS.map((skill) => (
+              <span
+                key={skill}
+                className="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 text-slate-300 text-xs sm:text-sm font-mono transition-colors"
+              >
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -360,8 +395,6 @@ export default function Home() {
         <div className="text-center space-y-4" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
             <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path d="M12 14l9-5-9-5-9 5 9 5z" />
-              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
             </svg>
             <span>Pendidikan & Prestasi</span>
