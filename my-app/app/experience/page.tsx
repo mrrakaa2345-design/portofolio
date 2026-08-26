@@ -13,7 +13,10 @@ export default function ExperiencePage() {
       {/* 1. HEADER */}
       <div className="text-center space-y-4" data-aos="fade-up">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
-          💼 Jejak Karir
+          <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span>Jejak Karir</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-black text-white">Pengalaman Kerja</h1>
         <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
@@ -33,7 +36,7 @@ export default function ExperiencePage() {
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`text-left px-5 py-3.5 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 whitespace-nowrap ${
+              className={`text-left px-5 py-3.5 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 whitespace-nowrap cursor-pointer ${
                 activeTab === index
                   ? "bg-cyan-500/15 text-cyan-400 border border-cyan-500/40 shadow-lg shadow-cyan-500/10 translate-x-0 md:translate-x-1"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/60"
@@ -115,7 +118,7 @@ export default function ExperiencePage() {
       <div className="text-center pt-8" data-aos="fade-up">
         <p className="text-slate-400 text-sm mb-4">Tertarik untuk berkolaborasi dalam proyek Anda berikutnya?</p>
         <Link
-          href="/contact"
+          href="/#contact"
           className="inline-block px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all hover:-translate-y-0.5"
         >
           Diskusikan Peluang

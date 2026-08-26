@@ -36,7 +36,10 @@ export default function EducationPage() {
       {/* 1. HEADER */}
       <div className="text-center space-y-4" data-aos="fade-up">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
-          🎓 Pendidikan & Prestasi
+          <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+          </svg>
+          <span>Pendidikan & Prestasi</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-black text-white">Edukasi & Pencapaian</h1>
         <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
@@ -118,7 +121,7 @@ export default function EducationPage() {
       {/* 4. CTA */}
       <div className="text-center pt-6" data-aos="fade-up">
         <Link
-          href="/projects"
+          href="/#projects"
           className="inline-block px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all hover:-translate-y-0.5"
         >
           Lihat Implementasi Proyek Nyata

@@ -76,7 +76,10 @@ export default function ContactPage() {
       {/* 1. HEADER */}
       <div className="text-center space-y-4" data-aos="fade-up">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
-          📬 Hubungi Saya
+          <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span>Hubungi Saya</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-black text-white">Mari Bekerja Sama!</h1>
         <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">

@@ -206,7 +206,10 @@ export default function Home() {
       <section id="about" className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16 scroll-mt-28">
         <div className="text-center space-y-4" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
-            👋 Mengenal Lebih Dekat
+            <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <span>Mengenal Lebih Dekat</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white">Tentang Saya</h2>
           <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
@@ -233,7 +236,9 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-stretch" data-aos="fade-up">
           <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/80 space-y-4">
             <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-xl">
-              💡
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
             </div>
             <h3 className="text-2xl font-bold text-white">Filosofi Pengembangan</h3>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -257,7 +262,9 @@ export default function Home() {
 
           <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/80 space-y-4">
             <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-xl">
-              🚀
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
             </div>
             <h3 className="text-2xl font-bold text-white">Keahlian Spesialisasi</h3>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -285,7 +292,10 @@ export default function Home() {
       <section id="experience" className="max-w-5xl mx-auto px-4 sm:px-8 space-y-12 scroll-mt-28">
         <div className="text-center space-y-4" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
-            💼 Jejak Karir
+            <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Jejak Karir</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white">Pengalaman Kerja</h2>
           <p className="text-slate-400 text-base sm:text-lg">Jejak karir dan kontribusi saya dalam pengembangan perangkat lunak.</p>
@@ -349,7 +359,12 @@ export default function Home() {
       <section id="education" className="max-w-5xl mx-auto px-4 sm:px-8 space-y-16 scroll-mt-28">
         <div className="text-center space-y-4" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
-            🎓 Pendidikan & Prestasi
+            <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+            </svg>
+            <span>Pendidikan & Prestasi</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white">Edukasi & Pencapaian</h2>
           <p className="text-slate-400 text-base sm:text-lg">Latar belakang pendidikan formal dan sertifikasi keahlian.</p>
@@ -412,7 +427,10 @@ export default function Home() {
       <section id="projects" className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16 scroll-mt-28">
         <div className="text-center space-y-4" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold tracking-wide">
-            🚀 Hasil Karya
+            <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            <span>Hasil Karya</span>
           </div>
           <h2 className="text-4xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">
             Featured Projects
@@ -469,7 +487,9 @@ export default function Home() {
         {/* 3D Project Cards Grid */}
         {filteredProjects.length === 0 ? (
           <div className="text-center py-24 bg-slate-900/40 rounded-[2rem] border border-slate-800 backdrop-blur-sm">
-            <span className="text-4xl mb-4 block">🔍</span>
+            <svg className="w-12 h-12 text-slate-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
             <p className="text-xl font-bold text-slate-300 mb-2">Pencarian tidak ditemukan</p>
             <p className="text-slate-500 text-sm">Coba gunakan kata kunci atau teknologi lain.</p>
           </div>
@@ -486,7 +506,10 @@ export default function Home() {
       <section id="contact" className="max-w-6xl mx-auto px-4 sm:px-8 space-y-16 scroll-mt-28">
         <div className="text-center space-y-4" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
-            📬 Hubungi Saya
+            <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Hubungi Saya</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white">Mari Bekerja Sama!</h2>
           <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">

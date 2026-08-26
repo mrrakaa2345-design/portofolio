@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
-import { TECH_STACK } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About Me | Raka Febrian",
@@ -41,7 +40,10 @@ export default function AboutPage() {
       <section className="flex flex-col lg:flex-row items-center gap-12 sm:gap-16">
         <div className="flex-1 space-y-6 text-center lg:text-left" data-aos="fade-right">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
-            <span>👋</span> Mengenal Lebih Dekat
+            <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <span>Mengenal Lebih Dekat</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-black text-white leading-tight">
@@ -54,13 +56,13 @@ export default function AboutPage() {
 
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
             <Link
-              href="/contact"
+              href="/#contact"
               className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 hover:-translate-y-0.5 transition-all"
             >
               Hubungi Saya
             </Link>
             <Link
-              href="/projects"
+              href="/#projects"
               className="px-7 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-bold text-sm hover:border-cyan-500/50 hover:text-cyan-400 transition-all"
             >
               Lihat Portofolio
@@ -81,8 +83,8 @@ export default function AboutPage() {
               <p className="text-xl font-black text-white">Raka Febrian</p>
               <p className="text-xs font-mono text-cyan-400 mt-1">Front-End Engineer</p>
               <div className="mt-4 pt-4 border-t border-slate-800/80 w-full flex justify-around text-xs text-slate-400 font-mono">
-                <span>📍 Indonesia</span>
-                <span>⚡ Available</span>
+                <span>Indonesia</span>
+                <span className="text-emerald-400">● Available</span>
               </div>
             </div>
           </div>
@@ -108,7 +110,9 @@ export default function AboutPage() {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-stretch" data-aos="fade-up">
         <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/80 space-y-4">
           <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-xl">
-            💡
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
           </div>
           <h3 className="text-2xl font-bold text-white">Filosofi Pengembangan</h3>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -132,7 +136,9 @@ export default function AboutPage() {
 
         <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/80 space-y-4">
           <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-xl">
-            🚀
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
           </div>
           <h3 className="text-2xl font-bold text-white">Fokus & Minat</h3>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -149,7 +155,7 @@ export default function AboutPage() {
             </li>
             <li className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-blue-400"></span>
-              Modern CSS & Animasi Interaktif (Tailwind, AOS, Framer)
+              Modern CSS & Animasi Interaktif (Tailwind, AOS)
             </li>
           </ul>
         </div>
@@ -168,7 +174,7 @@ export default function AboutPage() {
               key={idx}
               className="p-6 sm:p-8 rounded-2xl bg-slate-900/70 border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1 space-y-4"
             >
-              <h4 className="text-xl font-bold text-white text-cyan-300">{cat.title}</h4>
+              <h4 className="text-xl font-bold text-cyan-300">{cat.title}</h4>
               <p className="text-xs sm:text-sm text-slate-400">{cat.desc}</p>
               <div className="flex flex-wrap gap-2 pt-2">
                 {cat.skills.map((s, i) => (
