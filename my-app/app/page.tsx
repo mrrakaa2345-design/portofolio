@@ -231,13 +231,76 @@ export default function Home() {
     },
     {
       name: "Email",
-      href: "mailto:mr.rakka23@gmail.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=mr.rakka23@gmail.com",
       label: "mr.rakka23@gmail.com",
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
+    },
+  ];
+
+  const CORE_TECH_STACK = [
+    {
+      name: "React 19",
+      icon: "react",
+      role: "UI & Component",
+      glow: "hover:border-cyan-400/60 hover:shadow-[0_0_22px_rgba(34,211,238,0.22)] hover:bg-cyan-500/5",
+      textColor: "group-hover:text-cyan-300",
+      iconBg: "bg-cyan-950/40 border-cyan-800/40",
+      badge: "v19",
+      badgeColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+    },
+    {
+      name: "Next.js 15",
+      icon: "next",
+      role: "App Router & SSR",
+      glow: "hover:border-slate-300/60 hover:shadow-[0_0_22px_rgba(255,255,255,0.12)] hover:bg-slate-800/40",
+      textColor: "group-hover:text-white",
+      iconBg: "bg-slate-900 border-slate-700/60",
+      badge: "v15",
+      badgeColor: "bg-white/10 text-slate-200 border-white/20",
+    },
+    {
+      name: "TypeScript",
+      icon: "typescript",
+      role: "Type-Safe System",
+      glow: "hover:border-blue-400/60 hover:shadow-[0_0_22px_rgba(59,130,246,0.22)] hover:bg-blue-500/5",
+      textColor: "group-hover:text-blue-300",
+      iconBg: "bg-blue-950/40 border-blue-800/40",
+      badge: "v5",
+      badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: "tailwind css",
+      role: "Modern Styling",
+      glow: "hover:border-sky-400/60 hover:shadow-[0_0_22px_rgba(56,189,248,0.22)] hover:bg-sky-500/5",
+      textColor: "group-hover:text-sky-300",
+      iconBg: "bg-sky-950/40 border-sky-800/40",
+      badge: "v4",
+      badgeColor: "bg-sky-500/10 text-sky-400 border-sky-500/20",
+    },
+    {
+      name: "Supabase",
+      icon: "supabase",
+      role: "PostgreSQL & Auth",
+      glow: "hover:border-emerald-400/60 hover:shadow-[0_0_22px_rgba(16,185,129,0.22)] hover:bg-emerald-500/5",
+      textColor: "group-hover:text-emerald-300",
+      iconBg: "bg-emerald-950/40 border-emerald-800/40",
+      badge: "BaaS",
+      badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+    },
+    {
+      name: "Figma",
+      icon: "figma",
+      role: "UI/UX & Prototype",
+      glow: "hover:border-purple-400/60 hover:shadow-[0_0_22px_rgba(168,85,247,0.22)] hover:bg-purple-500/5",
+      textColor: "group-hover:text-purple-300",
+      iconBg: "bg-purple-950/40 border-purple-800/40",
+      badge: "Design",
+      badgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/20",
     },
   ];
 
@@ -330,19 +393,61 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Core Tech Stack Strip */}
-          <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs font-mono">
-            <span className="text-slate-500 font-semibold uppercase tracking-wider mr-1">
-              {t.hero.techPillTitle}:
-            </span>
-            {["React 19", "Next.js 15", "TypeScript", "Tailwind CSS", "Supabase", "Figma"].map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 font-medium"
-              >
-                {tech}
-              </span>
-            ))}
+          {/* Core Tech Stack Section - Premium Interactive Grid */}
+          <div className="pt-8 border-t border-slate-800/80 w-full space-y-4">
+            {/* Header with animated beacon & badge */}
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2.5">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.9)]"></span>
+                </span>
+                <span className="text-xs sm:text-sm font-mono font-extrabold tracking-widest text-slate-200 uppercase">
+                  {t.hero.techPillTitle}
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-[11px] font-mono font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Production-Ready Stack</span>
+              </div>
+            </div>
+
+            {/* Grid of Interactive Tech Cards with Brand Glow & Badges */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-3.5">
+              {CORE_TECH_STACK.map((tech) => (
+                <div
+                  key={tech.name}
+                  className={`group relative flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-gradient-to-br from-slate-900/95 via-[#0b1019]/95 to-[#060910]/95 border border-white/[0.08] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl cursor-default overflow-hidden ${tech.glow}`}
+                >
+                  {/* Subtle Top Shimmer Line */}
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-cyan-400/40 transition-colors" />
+
+                  {/* Left: Icon & Text */}
+                  <div className="flex items-center gap-3 min-w-0 pr-2">
+                    <div
+                      className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl border flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 shadow-md ${tech.iconBg}`}
+                    >
+                      <TechIcon name={tech.icon} className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </div>
+                    <div className="min-w-0 flex flex-col text-left">
+                      <span className={`text-sm sm:text-base font-extrabold text-slate-100 truncate transition-colors duration-200 tracking-tight ${tech.textColor}`}>
+                        {tech.name}
+                      </span>
+                      <span className="text-[11px] sm:text-xs font-medium text-slate-400 truncate leading-snug group-hover:text-slate-300 transition-colors">
+                        {tech.role}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Right: Badge */}
+                  <span
+                    className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold border shrink-0 transition-colors ${tech.badgeColor}`}
+                  >
+                    {tech.badge}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -489,61 +594,230 @@ export default function Home() {
           {/* 3 Step Connected Process Cards with Visual Connector Lines */}
           <div className="relative pt-4">
             
-            {/* Connector Curve Path for Desktop (between cards) */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 -translate-y-1/2 pointer-events-none z-0 px-24">
-              <svg className="w-full h-24 overflow-visible" viewBox="0 0 800 100" fill="none">
-                <path
-                  d="M 180 50 Q 280 10, 380 50"
-                  stroke="#06b6d4"
-                  strokeWidth="2"
-                  strokeOpacity="0.4"
-                  className="animate-connector"
-                />
-                <path
-                  d="M 440 50 Q 540 90, 640 50"
-                  stroke="#06b6d4"
-                  strokeWidth="2"
-                  strokeOpacity="0.4"
-                  className="animate-connector"
-                />
-              </svg>
-            </div>
-
             {/* Cards Grid */}
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch z-10">
-              {t.about.steps.map((step, idx) => (
-                <div
-                  key={idx}
-                  className="relative p-8 rounded-3xl bg-[#0e131d]/90 backdrop-blur-xl border border-slate-800 hover:border-cyan-500/50 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between shadow-2xl space-y-6 group"
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800/80">
-                      <span className="text-4xl font-black text-cyan-400 font-mono tracking-tighter group-hover:scale-110 transition-transform">
+              {t.about.steps.map((step, idx) => {
+                const isFirst = idx === 0;
+                const isSecond = idx === 1;
+
+                const cardStyle = isFirst
+                  ? {
+                      borderColor: "border-cyan-500/20 hover:border-cyan-400/60",
+                      glowBg: "bg-cyan-500/10 group-hover:bg-cyan-500/20",
+                      accentLine: "from-transparent via-cyan-400 to-transparent",
+                      iconBoxBg: "from-cyan-500/20 to-violet-600/20 border-cyan-500/30 text-cyan-400 shadow-cyan-500/20",
+                      badgeBg: "bg-cyan-500/10 text-cyan-300 border-cyan-500/30",
+                      stepPill: "bg-cyan-400/10 text-cyan-400 border-cyan-400/30",
+                      titleHover: "group-hover:text-cyan-300",
+                      dotColor: "bg-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.9)]",
+                      chipBg: "bg-cyan-950/40 text-cyan-300/90 border-cyan-500/20 hover:border-cyan-400/40 hover:bg-cyan-900/40",
+                      shadowHover: "group-hover:shadow-[0_20px_50px_rgba(6,182,212,0.18)]",
+                    }
+                  : isSecond
+                  ? {
+                      borderColor: "border-blue-500/20 hover:border-blue-400/60",
+                      glowBg: "bg-blue-500/10 group-hover:bg-blue-500/20",
+                      accentLine: "from-transparent via-blue-400 to-transparent",
+                      iconBoxBg: "from-blue-500/20 to-indigo-600/20 border-blue-500/30 text-blue-400 shadow-blue-500/20",
+                      badgeBg: "bg-blue-500/10 text-blue-300 border-blue-500/30",
+                      stepPill: "bg-blue-400/10 text-blue-400 border-blue-400/30",
+                      titleHover: "group-hover:text-blue-300",
+                      dotColor: "bg-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.9)]",
+                      chipBg: "bg-blue-950/40 text-blue-300/90 border-blue-500/20 hover:border-blue-400/40 hover:bg-blue-900/40",
+                      shadowHover: "group-hover:shadow-[0_20px_50px_rgba(59,130,246,0.18)]",
+                    }
+                  : {
+                      borderColor: "border-amber-500/20 hover:border-amber-400/60",
+                      glowBg: "bg-amber-500/10 group-hover:bg-amber-500/20",
+                      accentLine: "from-transparent via-amber-400 to-transparent",
+                      iconBoxBg: "from-amber-500/20 to-rose-600/20 border-amber-500/30 text-amber-400 shadow-amber-500/20",
+                      badgeBg: "bg-amber-500/10 text-amber-300 border-amber-500/30",
+                      stepPill: "bg-amber-400/10 text-amber-400 border-amber-400/30",
+                      titleHover: "group-hover:text-amber-300",
+                      dotColor: "bg-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.9)]",
+                      chipBg: "bg-amber-950/40 text-amber-300/90 border-amber-500/20 hover:border-amber-400/40 hover:bg-amber-900/40",
+                      shadowHover: "group-hover:shadow-[0_20px_50px_rgba(245,158,11,0.18)]",
+                    };
+
+                return (
+                  <div key={idx} className="relative flex flex-col h-full">
+                    {/* The Card Body */}
+                    <div
+                      className={`relative h-full p-7 sm:p-8 rounded-[2rem] bg-gradient-to-b from-slate-900/95 via-[#0b1019]/95 to-[#06090f]/95 backdrop-blur-2xl border ${cardStyle.borderColor} transition-all duration-500 hover:-translate-y-3 flex flex-col justify-between shadow-2xl ${cardStyle.shadowHover} group overflow-hidden`}
+                    >
+                      {/* Top Animated Accent Border Light */}
+                      <div
+                        className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${cardStyle.accentLine} opacity-40 group-hover:opacity-100 transition-opacity duration-500`}
+                      />
+
+                      {/* Ambient Glow Spotlight inside card */}
+                      <div
+                        className={`absolute -right-12 -top-12 w-44 h-44 rounded-full ${cardStyle.glowBg} blur-3xl pointer-events-none transition-all duration-500 group-hover:scale-125`}
+                      />
+
+                      {/* High-Tech Giant Watermark Step Number */}
+                      <span className="absolute top-3 right-6 font-mono font-black text-7xl sm:text-8xl text-white/[0.03] group-hover:text-white/[0.08] select-none pointer-events-none transition-all duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
                         {step.number}
                       </span>
-                      <span className="text-[11px] font-mono text-cyan-300 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
-                        {step.tag}
-                      </span>
+
+                      {/* Card Content Top Section */}
+                      <div className="relative z-10 space-y-5">
+                        
+                        {/* Top Bar with Icon & Badges */}
+                        <div className="flex items-center justify-between gap-3">
+                          <div
+                            className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${cardStyle.iconBoxBg} border flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shrink-0`}
+                          >
+                            {step.iconKey === "design" ? (
+                              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                                <path d="M2 2l7.586 7.586" />
+                                <circle cx="11" cy="11" r="2" />
+                              </svg>
+                            ) : step.iconKey === "code" ? (
+                              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                                <line x1="14" y1="4" x2="10" y2="20" />
+                              </svg>
+                            ) : (
+                              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+                              </svg>
+                            )}
+                          </div>
+
+                          {/* Step Pill & Tag */}
+                          <div className="flex flex-wrap items-center gap-2 justify-end">
+                            <span className={`text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full border uppercase tracking-wider ${cardStyle.stepPill}`}>
+                              Step {step.number}
+                            </span>
+                            <span className={`text-[10px] font-mono font-medium px-2.5 py-0.5 rounded-full border ${cardStyle.badgeBg}`}>
+                              {step.tag}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Title & Description */}
+                        <div className="space-y-2.5 pt-1">
+                          <h4 className={`text-xl sm:text-2xl font-black text-white ${cardStyle.titleHover} transition-colors font-heading tracking-tight`}>
+                            {step.title}
+                          </h4>
+                          <p className="text-xs sm:text-sm text-slate-300/85 leading-relaxed font-normal">
+                            {step.desc}
+                          </p>
+                        </div>
+
+                        {/* Feature Capability Chips */}
+                        {step.highlights && step.highlights.length > 0 && (
+                          <div className="pt-2 flex flex-wrap gap-1.5">
+                            {step.highlights.map((hl, hIdx) => (
+                              <span
+                                key={hIdx}
+                                className={`text-[11px] font-mono px-2.5 py-1 rounded-lg border backdrop-blur-sm transition-all duration-300 ${cardStyle.chipBg}`}
+                              >
+                                {hl}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+
+                      </div>
+
+                      {/* Card Footer: Phase Status & Quality Beacon */}
+                      <div className="relative z-10 pt-5 mt-6 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                        <span className="font-semibold text-slate-300">
+                          {step.phaseLabel}
+                        </span>
+                        <span className="flex items-center gap-1.5 font-medium text-slate-300">
+                          <span className={`w-2 h-2 rounded-full ${cardStyle.dotColor} animate-pulse`} />
+                          <span>{step.metricsLabel}</span>
+                        </span>
+                      </div>
+
                     </div>
 
-                    <h4 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors font-heading">
-                      {step.title}
-                    </h4>
+                    {/* Inter-Card Floating Connected Dots/Path for Desktop (between 01->02 and 02->03) */}
+                    {idx < 2 && (
+                      <div className="hidden md:flex absolute -right-3.5 sm:-right-4 lg:-right-4.5 top-1/2 -translate-y-1/2 translate-x-1/2 z-30 pointer-events-none items-center justify-center w-12 sm:w-16">
+                        {/* SVG Dashed Line passing horizontally between Card A and Card B */}
+                        <svg className="absolute inset-0 w-full h-8 overflow-visible" viewBox="0 0 64 32" fill="none">
+                          <defs>
+                            <linearGradient id={`flow-grad-${idx}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stopColor={idx === 0 ? "#22d3ee" : "#3b82f6"} stopOpacity="0.9" />
+                              <stop offset="100%" stopColor={idx === 0 ? "#3b82f6" : "#f59e0b"} stopOpacity="0.9" />
+                            </linearGradient>
+                          </defs>
+                          {/* Ambient glowing line */}
+                          <path
+                            d="M -10 16 L 74 16"
+                            stroke={`url(#flow-grad-${idx})`}
+                            strokeWidth="4"
+                            className="blur-[2px] opacity-40"
+                          />
+                          {/* Sharp animated dashed dots */}
+                          <path
+                            d="M -10 16 L 74 16"
+                            stroke={`url(#flow-grad-${idx})`}
+                            strokeWidth="2.5"
+                            strokeDasharray="4 4"
+                            className="animate-connector"
+                          />
+                        </svg>
 
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
-                      {step.desc}
-                    </p>
-                  </div>
+                        {/* Center Cyber Flow Node */}
+                        <div
+                          className={`relative flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#080d17] border shadow-2xl backdrop-blur-xl transition-transform ${
+                            idx === 0
+                              ? "border-cyan-400/80 text-cyan-300 shadow-[0_0_16px_rgba(6,182,212,0.55)]"
+                              : "border-blue-400/80 text-blue-300 shadow-[0_0_16px_rgba(59,130,246,0.55)]"
+                          }`}
+                        >
+                          <span
+                            className={`absolute inset-0 rounded-full border border-dashed animate-spin ${
+                              idx === 0 ? "border-cyan-400/60" : "border-blue-400/60"
+                            }`}
+                            style={{ animationDuration: "10s" }}
+                          />
+                          <svg className="w-3.5 h-3.5 animate-pulse" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </div>
+                      </div>
+                    )}
 
-                  <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                    <span>Phase {step.number}</span>
-                    <span className="text-cyan-400 font-semibold flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                      Standard Process
-                    </span>
+                    {/* Mobile Vertical Flow Connector (Between Step 01 -> 02 and 02 -> 03) */}
+                    {idx < 2 && (
+                      <div className="md:hidden flex flex-col items-center justify-center my-3 pointer-events-none z-20">
+                        <div
+                          className={`w-[2px] h-6 border-l-2 border-dashed ${
+                            idx === 0 ? "border-cyan-400/70" : "border-blue-400/70"
+                          }`}
+                        />
+                        <div
+                          className={`w-7 h-7 rounded-full bg-[#080d17] border flex items-center justify-center shadow-lg my-1 ${
+                            idx === 0 ? "border-cyan-400/80 text-cyan-300 shadow-[0_0_10px_rgba(6,182,212,0.4)]" : "border-blue-400/80 text-blue-300 shadow-[0_0_10px_rgba(59,130,246,0.4)]"
+                          }`}
+                        >
+                          <svg className="w-3.5 h-3.5 animate-pulse" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                          </svg>
+                        </div>
+                        <div
+                          className={`w-[2px] h-6 border-l-2 border-dashed ${
+                            idx === 0 ? "border-blue-400/70" : "border-amber-400/70"
+                          }`}
+                        />
+                      </div>
+                    )}
+
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
           </div>
@@ -792,9 +1066,11 @@ export default function Home() {
         {/* Action Buttons Bar */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2" data-aos="fade-up" data-aos-delay="100">
           
-          {/* Primary Action: Mailto */}
+          {/* Primary Action: Direct Gmail Compose */}
           <a
-            href="mailto:mr.rakka23@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=mr.rakka23@gmail.com"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#0d121c] hover:bg-black text-white font-extrabold text-sm sm:text-base border border-slate-700/80 shadow-xl hover:border-cyan-500/60 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer group"
           >
             <span className="text-cyan-400 group-hover:translate-x-1 transition-transform">→</span>

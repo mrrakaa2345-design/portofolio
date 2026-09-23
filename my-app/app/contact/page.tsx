@@ -103,7 +103,7 @@ export default function ContactPage() {
     },
     {
       name: "Email",
-      href: "mailto:mr.rakka23@gmail.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=mr.rakka23@gmail.com",
       icon: (
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -150,9 +150,11 @@ export default function ContactPage() {
         {/* Central Action CTA Buttons Bar */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-4">
           
-          {/* Primary Action Pill: Mailto */}
+          {/* Primary Action Pill: Direct Gmail Compose */}
           <a
-            href="mailto:mr.rakka23@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=mr.rakka23@gmail.com"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#0d121c] hover:bg-black text-white font-extrabold text-sm sm:text-base border border-slate-700/80 shadow-xl hover:border-cyan-500/60 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer group"
           >
             <span className="text-cyan-400 group-hover:translate-x-1 transition-transform">→</span>
@@ -300,7 +302,12 @@ export default function ContactPage() {
           <a href="https://instagram.com/rakaafeb_" target="_blank" rel="noreferrer" className="hover:text-pink-400 transition-colors">
             Instagram
           </a>
-          <a href="mailto:mr.rakka23@gmail.com" className="hover:text-cyan-400 transition-colors">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=mr.rakka23@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-cyan-400 transition-colors"
+          >
             Email
           </a>
         </div>

@@ -27,8 +27,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Raka Febrian | Front-End Developer & UI/UX Specialist",
-  description: "Portfolio Raka Febrian - Siswa SIJA SMK Telkom Sidoarjo & Front-End Developer",
+  title: "Raka Febrian | Software Developer & Tech Enthusiast",
+  description: "Portfolio Raka Febrian - Siswa SIJA SMK Telkom Sidoarjo & Software Developer / Tech Enthusiast",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({

@@ -10,22 +10,22 @@ export const metadata: Metadata = {
 
 const CERTIFICATES = [
   {
-    title: "Frontend Developer Expert",
+    title: "Full-Stack Web & Software Engineering",
     issuer: "Dicoding Academy",
-    date: "2023",
-    skills: ["PWA", "Web Performance", "Clean Code", "Testing"],
+    date: "2024",
+    skills: ["REST API", "Database Design", "Clean Architecture", "Testing"],
   },
   {
-    title: "React & Next.js Architecture Specialist",
-    issuer: "Coursera / Meta",
-    date: "2023",
-    skills: ["React Server Components", "State Management", "SSR & SSG"],
+    title: "Azure AI Fundamentals (AI-900) Certification",
+    issuer: "Microsoft x KOMDIGI",
+    date: "2025",
+    skills: ["Cloud Concepts", "Machine Learning", "Computer Vision", "NLP"],
   },
   {
-    title: "Advanced JavaScript & TypeScript Mastery",
-    issuer: "Udemy",
-    date: "2022",
-    skills: ["Asynchronous JS", "Generics", "Type Safety", "Design Patterns"],
+    title: "Advanced JavaScript & TypeScript Architecture",
+    issuer: "Meta / Coursera",
+    date: "2023",
+    skills: ["State Management", "Type Safety", "Full-Stack React", "Design Patterns"],
   },
 ];
 

@@ -51,16 +51,18 @@ export interface ProjectItem {
 }
 
 export const TECH_STACK: TechItem[] = [
-  { name: "Vue.js", category: "frontend", bg: "bg-emerald-500/10 border-emerald-500/30 text-emerald-400" },
   { name: "React.js", category: "frontend", bg: "bg-cyan-500/10 border-cyan-500/30 text-cyan-400" },
-  { name: "TypeScript", category: "frontend", bg: "bg-blue-500/10 border-blue-500/30 text-blue-400" },
-  { name: "Tailwind CSS", category: "frontend", bg: "bg-sky-500/10 border-sky-500/30 text-sky-400" },
   { name: "Next.js", category: "frontend", bg: "bg-zinc-500/10 border-zinc-500/30 text-zinc-200" },
+  { name: "TypeScript", category: "frontend", bg: "bg-blue-500/10 border-blue-500/30 text-blue-400" },
   { name: "Node.js", category: "backend", bg: "bg-green-500/10 border-green-500/30 text-green-400" },
-  { name: "JavaScript", category: "frontend", bg: "bg-yellow-500/10 border-yellow-500/30 text-yellow-400" },
-  { name: "Git & GitHub", category: "tools", bg: "bg-orange-500/10 border-orange-500/30 text-orange-400" },
+  { name: "PHP", category: "backend", bg: "bg-indigo-500/10 border-indigo-500/30 text-indigo-400" },
+  { name: "Laravel", category: "backend", bg: "bg-rose-500/10 border-rose-500/30 text-rose-400" },
+  { name: "MySQL", category: "backend", bg: "bg-amber-500/10 border-amber-500/30 text-amber-400" },
   { name: "Supabase", category: "backend", bg: "bg-emerald-600/10 border-emerald-600/30 text-emerald-300" },
-  { name: "PostgreSQL", category: "backend", bg: "bg-indigo-500/10 border-indigo-500/30 text-indigo-400" },
+  { name: "Tailwind CSS", category: "frontend", bg: "bg-sky-500/10 border-sky-500/30 text-sky-400" },
+  { name: "Vue.js", category: "frontend", bg: "bg-emerald-500/10 border-emerald-500/30 text-emerald-400" },
+  { name: "Git & GitHub", category: "tools", bg: "bg-orange-500/10 border-orange-500/30 text-orange-400" },
+  { name: "Figma", category: "tools", bg: "bg-purple-500/10 border-purple-500/30 text-purple-400" },
 ];
 
 export const ACHIEVEMENTS: AchievementItem[] = [
@@ -175,35 +177,35 @@ export const ACHIEVEMENTS: AchievementItem[] = [
 export const EXPERIENCES: ExperienceItem[] = [
   {
     company: "Tech Corp Indonesia",
-    role: "Front-End Developer",
+    role: "Software & Web Developer",
     period: "2024 - Sekarang",
     description: [
-      "Mengembangkan aplikasi web berbasis React.js dan Next.js dengan fokus pada optimasi performa dan SEO.",
-      "Bekerja sama dengan tim UI/UX untuk mengimplementasikan design system yang konsisten dan responsif.",
-      "Meningkatkan skor Lighthouse website utama dari 65 menjadi 95+.",
+      "Mengembangkan aplikasi web dan sistem berbasis Next.js & React.js dengan fokus pada efisiensi arsitektur, optimasi performa, dan SEO.",
+      "Mengintegrasikan database dan layanan cloud Supabase/PostgreSQL untuk mendukung fungsionalitas sistem yang dinamis.",
+      "Bekerja sama dengan tim lintas disiplin untuk mengimplementasikan design system yang konsisten dan responsif.",
     ],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
   },
   {
     company: "Digital Creative Studio",
-    role: "Junior Web Developer",
+    role: "Web & Application Developer",
     period: "2023 - 2024",
     description: [
-      "Membangun lebih dari 10 landing page interaktif menggunakan Vue.js dan Tailwind CSS.",
-      "Mengintegrasikan REST API backend ke dalam antarmuka pengguna secara real-time.",
-      "Melakukan refactoring kode legacy untuk mempercepat loading speed halaman.",
+      "Membangun berbagai antarmuka interaktif dan landing page modern menggunakan Vue.js dan Tailwind CSS.",
+      "Mengintegrasikan REST API backend dan database ke dalam antarmuka pengguna secara real-time.",
+      "Melakukan refactoring kode arsitektur untuk meningkatkan performa loading dan stabilitas sistem.",
     ],
-    tech: ["Vue.js", "JavaScript", "REST API", "Tailwind CSS"],
+    tech: ["Vue.js", "JavaScript", "REST API", "PHP", "Tailwind CSS"],
   },
   {
     company: "Freelance / Remote",
-    role: "Frontend Specialist",
+    role: "Full-Stack Web Developer",
     period: "2022 - 2023",
     description: [
-      "Menerima proyek pembuatan portofolio, dashboard admin, dan e-commerce dari klien lokal.",
-      "Memastikan tampilan web kompatibel cross-browser dan mobile-friendly.",
+      "Menerima proyek pembuatan sistem informasi, dashboard analitik, dan aplikasi web dari klien lokal.",
+      "Merancang antarmuka di Figma dan mengimplementasikannya ke dalam arsitektur kode modern yang responsif dan mobile-friendly.",
     ],
-    tech: ["React.js", "Tailwind CSS", "Framer Motion", "Vite"],
+    tech: ["React.js", "PHP / Laravel", "MySQL", "Tailwind CSS", "Vite"],
   },
 ];
 

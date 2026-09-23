@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useLanguage } from "@/lib/languageContext";
 import HeaderActions from "@/components/HeaderActions";
@@ -65,26 +66,37 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 lg:px-8 py-3.5 transition-all duration-500 pointer-events-none">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 pointer-events-none flex justify-center transition-all duration-500 ease-in-out ${
+        scrolled ? "py-2.5 sm:py-3 px-3 sm:px-6" : "py-4 sm:py-5 px-4 sm:px-8"
+      }`}
+    >
       <nav
-        className={`mx-auto pointer-events-auto transition-all duration-500 ease-in-out ${
+        className={`pointer-events-auto transition-all duration-500 ease-in-out ${
           scrolled
-            ? "max-w-5xl rounded-full bg-[#0b0f17]/95 backdrop-blur-xl border border-slate-800/90 py-2 px-4 sm:px-6 shadow-2xl shadow-cyan-950/30"
-            : "max-w-7xl rounded-2xl bg-[#0b0f17]/50 backdrop-blur-md py-3 px-4 sm:px-6 border border-slate-800/50 shadow-lg"
+            ? "w-full max-w-5xl rounded-full bg-[#0b0f17]/90 backdrop-blur-2xl border border-slate-800/90 py-2 px-4 sm:px-6 shadow-2xl shadow-cyan-950/30"
+            : "w-full max-w-7xl rounded-2xl bg-[#0b0f17]/40 backdrop-blur-md border border-slate-800/40 py-3 sm:py-3.5 px-4 sm:px-6 shadow-lg shadow-black/10"
         }`}
       >
-        <div className="w-full flex items-center justify-between gap-2 sm:gap-4">
-          {/* Brand / Logo */}
+        <div className="w-full flex items-center justify-between gap-3 sm:gap-6">
+          {/* Brand / Logo (Frameless Direct RF Logo) */}
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, "home")}
-            className="font-extrabold text-lg sm:text-xl tracking-tight flex items-center gap-2.5 group cursor-pointer shrink-0"
+            className="font-extrabold text-base sm:text-lg tracking-tight flex items-center gap-2 group cursor-pointer shrink-0"
           >
-            <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/30 group-hover:border-cyan-400 group-hover:scale-105 transition-all duration-300 font-mono text-xs font-bold shadow-sm">
-              RF
-            </span>
-            <span className="text-white group-hover:text-cyan-400 transition-colors font-bold hidden xs:inline-block">
-              Portofolio<span className="text-cyan-400">.</span>
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.7)] shrink-0">
+              <Image
+                src="/rf-logo.png"
+                alt="Raka Febrian Logo"
+                fill
+                priority
+                className="object-contain"
+                sizes="(max-width: 640px) 32px, 36px"
+              />
+            </div>
+            <span className="text-white group-hover:text-cyan-400 transition-colors font-bold hidden sm:inline-block font-heading text-sm sm:text-base">
+              Raka Febrian<span className="text-cyan-400">.</span>
             </span>
           </a>
 

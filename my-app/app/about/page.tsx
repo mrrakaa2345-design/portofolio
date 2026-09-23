@@ -1,30 +1,34 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About | Raka Febrian",
-  description: "Tentang Raka Febrian, Front-End Developer & UI/UX enthusiast.",
+  description: "Tentang Raka Febrian, Software Developer & Tech Enthusiast dari SIJA SMK Telkom Sidoarjo.",
 };
 
 const SKILLS = [
-  "HTML",
-  "CSS",
+  "TypeScript",
   "JavaScript",
+  "React.js",
+  "Next.js",
+  "Node.js",
   "PHP",
   "Laravel",
   "MySQL",
-  "Figma",
-  "Git",
-  "GitHub",
+  "PostgreSQL",
   "Supabase",
+  "Tailwind CSS",
+  "Figma",
+  "Git & GitHub",
 ];
 
 const INTERESTS = [
-  "Front-End Development",
-  "UI/UX Design",
-  "Web Development",
-  "Interactive Interface",
+  "Full-Stack Web Development",
+  "Software Engineering",
+  "UI/UX & Product Design",
+  "Cloud & AI Technologies",
 ];
 
 export default function AboutPage() {
@@ -56,18 +60,18 @@ export default function AboutPage() {
             </div>
 
             <h1 className="max-w-3xl text-5xl font-semibold leading-[0.95] tracking-[-0.05em] text-white sm:text-7xl">
-              Designing
+              Engineering
               <br />
-              <span className="text-slate-500">and building</span>
+              <span className="text-slate-500">and crafting</span>
               <br />
-              digital experiences.
+              digital solutions.
             </h1>
 
             <p className="mt-8 max-w-xl text-base leading-8 text-slate-400 sm:text-lg">
-              Saya Raka Febrian, siswa SIJA di SMK Telkom Sidoarjo yang
-              tertarik pada Front-End Development dan UI/UX Design.
-              Saya suka mengubah ide menjadi website yang rapi,
-              responsif, dan nyaman digunakan.
+              Saya Raka Febrian, siswa SIJA di SMK Telkom Sidoarjo dengan
+              passion mendalam pada Software Engineering, Full-Stack Web Development,
+              dan UI/UX Design. Saya suka merancang dan membangun sistem digital
+              yang terstruktur rapi, efisien, dan memberikan solusi nyata.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -107,17 +111,23 @@ export default function AboutPage() {
               <div className="absolute inset-5 flex items-center justify-center overflow-hidden rounded-[1.5rem] border border-white/[0.06] bg-[#0b0f15]">
                 <div className="absolute h-48 w-48 rounded-full bg-cyan-400/[0.07] blur-3xl" />
 
-                <div className="relative text-center">
-                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-3xl font-semibold tracking-tight text-white">
-                    RF
+                <div className="relative text-center flex flex-col items-center">
+                  <div className="relative w-28 h-28 sm:w-32 sm:h-32 transition-transform duration-500 hover:scale-110 drop-shadow-[0_0_25px_rgba(34,211,238,0.5)]">
+                    <Image
+                      src="/rf-logo.png"
+                      alt="Raka Febrian Logo"
+                      fill
+                      className="object-contain"
+                      sizes="128px"
+                    />
                   </div>
 
-                  <p className="mt-5 text-lg font-medium text-white">
+                  <p className="mt-4 text-lg font-bold font-heading text-white">
                     Raka Febrian
                   </p>
 
-                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-cyan-400">
-                    Front-End / UI UX
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-cyan-400 font-mono">
+                    Software & Web Dev
                   </p>
                 </div>
               </div>
