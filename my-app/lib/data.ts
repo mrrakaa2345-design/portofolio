@@ -51,18 +51,18 @@ export interface ProjectItem {
 }
 
 export const TECH_STACK: TechItem[] = [
-  { name: "React.js", category: "frontend", bg: "bg-cyan-500/10 border-cyan-500/30 text-cyan-400" },
-  { name: "Next.js", category: "frontend", bg: "bg-zinc-500/10 border-zinc-500/30 text-zinc-200" },
-  { name: "TypeScript", category: "frontend", bg: "bg-blue-500/10 border-blue-500/30 text-blue-400" },
-  { name: "Node.js", category: "backend", bg: "bg-green-500/10 border-green-500/30 text-green-400" },
-  { name: "PHP", category: "backend", bg: "bg-indigo-500/10 border-indigo-500/30 text-indigo-400" },
-  { name: "Laravel", category: "backend", bg: "bg-rose-500/10 border-rose-500/30 text-rose-400" },
-  { name: "MySQL", category: "backend", bg: "bg-amber-500/10 border-amber-500/30 text-amber-400" },
-  { name: "Supabase", category: "backend", bg: "bg-emerald-600/10 border-emerald-600/30 text-emerald-300" },
-  { name: "Tailwind CSS", category: "frontend", bg: "bg-sky-500/10 border-sky-500/30 text-sky-400" },
-  { name: "Vue.js", category: "frontend", bg: "bg-emerald-500/10 border-emerald-500/30 text-emerald-400" },
-  { name: "Git & GitHub", category: "tools", bg: "bg-orange-500/10 border-orange-500/30 text-orange-400" },
-  { name: "Figma", category: "tools", bg: "bg-purple-500/10 border-purple-500/30 text-purple-400" },
+  { name: "React.js", category: "frontend", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "Next.js", category: "frontend", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "TypeScript", category: "frontend", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "Node.js", category: "backend", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "PHP", category: "backend", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "Laravel", category: "backend", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "MySQL", category: "backend", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "Supabase", category: "backend", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "Tailwind CSS", category: "frontend", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "Vue.js", category: "frontend", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "Git & GitHub", category: "tools", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
+  { name: "Figma", category: "tools", bg: "bg-[#14221E] border-[#B49A67]/20 text-[#F3EFE6]" },
 ];
 
 export const ACHIEVEMENTS: AchievementItem[] = [
@@ -79,8 +79,8 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     description: "Meraih penghargaan bergengsi Project Terbaik 3 pada Ujian Kenaikan Level 2 kelas XI SIJA 2 Tahun Ajaran 2025/2026 melalui inovasi solusi digital konsep Aplikasi Desa Sawotratap.",
     highlights: ["Ujian Kenaikan Level 2 SIJA", "Digitalisasi Layanan Desa", "Inovasi Web & Sistem Informasi"],
     badge: "Juara 3 SIJA",
-    badgeColor: "bg-amber-500/15 border-amber-500/40 text-amber-300",
-    accentGlow: "from-amber-500/20 via-orange-500/10 to-transparent",
+    badgeColor: "bg-[#B49A67]/15 border-[#B49A67]/30 text-[#B49A67]",
+    accentGlow: "from-[#B49A67]/15 via-[#182A25]/40 to-transparent",
     featured: true,
   },
   {
@@ -97,8 +97,8 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     description: "Sertifikasi kelulusan resmi program nasional Microsoft elevAIte untuk penguasaan fondasi Artificial Intelligence, Azure Machine Learning, Computer Vision, dan Natural Language Processing.",
     highlights: ["Microsoft Azure Cloud", "Artificial Intelligence Fundamentals", "Computer Vision & NLP"],
     badge: "Microsoft Azure AI",
-    badgeColor: "bg-cyan-500/15 border-cyan-500/40 text-cyan-300",
-    accentGlow: "from-cyan-500/20 via-blue-500/10 to-transparent",
+    badgeColor: "bg-[#B49A67]/15 border-[#B49A67]/30 text-[#B49A67]",
+    accentGlow: "from-[#B49A67]/15 via-[#182A25]/40 to-transparent",
     featured: true,
   },
   {
@@ -114,8 +114,8 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     description: "Penghargaan Certificate of Appreciation sebagai Semifinalis dalam kompetisi Business Plan tingkat SMA nasional bertema 'Street-Smart Innovation: Business Solutions for Real Urban Challenges'.",
     highlights: ["Tingkat SMA Nasional", "FIA Universitas Indonesia", "Urban Innovation Business Plan"],
     badge: "Semifinalis UI 2025",
-    badgeColor: "bg-blue-500/15 border-blue-500/40 text-blue-300",
-    accentGlow: "from-blue-500/20 via-indigo-500/10 to-transparent",
+    badgeColor: "bg-[#B49A67]/15 border-[#B49A67]/30 text-[#B49A67]",
+    accentGlow: "from-[#B49A67]/15 via-[#182A25]/40 to-transparent",
     featured: true,
   },
   {
@@ -132,8 +132,8 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     description: "Meraih gelar Juara 3 tingkat Provinsi Jawa Timur bersama Akademi SQUADRA FC pada Kejuaraan Resmi AAFI Jatim Cup 2025 yang diselenggarakan di Surabaya.",
     highlights: ["Tingkat Provinsi Jawa Timur", "Akademi SQUADRA FC", "Kategori Usia 16"],
     badge: "Juara 3 Jatim",
-    badgeColor: "bg-rose-500/15 border-rose-500/40 text-rose-300",
-    accentGlow: "from-rose-500/20 via-red-500/10 to-transparent",
+    badgeColor: "bg-[#B49A67]/15 border-[#B49A67]/30 text-[#B49A67]",
+    accentGlow: "from-[#B49A67]/15 via-[#182A25]/40 to-transparent",
     featured: true,
   },
   {
@@ -150,8 +150,8 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     description: "Pencapaian Juara 4 dalam rangkaian kompetisi liga futsal resmi AAFI League Surabaya 2025 yang berlangsung selama musim kompetisi Maret hingga Oktober 2025.",
     highlights: ["Liga Resmi AAFI Surabaya", "Akademi SQUADRA FC", "Musim 2025"],
     badge: "Juara 4 Surabaya",
-    badgeColor: "bg-emerald-500/15 border-emerald-500/40 text-emerald-300",
-    accentGlow: "from-emerald-500/20 via-teal-500/10 to-transparent",
+    badgeColor: "bg-[#B49A67]/15 border-[#B49A67]/30 text-[#B49A67]",
+    accentGlow: "from-[#B49A67]/15 via-[#182A25]/40 to-transparent",
     featured: false,
   },
   {
@@ -168,8 +168,8 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     description: "Sertifikat kelulusan pelatihan Micro Skill Digital Talent Scholarship 2026 bidang Mindset Digital dari Pusat Pengembangan Literasi Digital, Kementerian Komunikasi dan Digital RI.",
     highlights: ["Digital Talent Scholarship 2026", "SDM KOMDIGI RI", "Pola Pikir & Literasi Digital"],
     badge: "Micro Skill DTS 2026",
-    badgeColor: "bg-sky-500/15 border-sky-500/40 text-sky-300",
-    accentGlow: "from-sky-500/20 via-cyan-500/10 to-transparent",
+    badgeColor: "bg-[#B49A67]/15 border-[#B49A67]/30 text-[#B49A67]",
+    accentGlow: "from-[#B49A67]/15 via-[#182A25]/40 to-transparent",
     featured: false,
   },
 ];
@@ -248,7 +248,7 @@ export const PROJECTS: ProjectItem[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Recharts", "Supabase"],
     link: "https://github.com",
     github: "https://github.com",
-    gradient: "from-cyan-600 via-blue-600 to-indigo-800",
+    gradient: "from-[#14221E] via-[#1A2C27] to-[#101A17]",
   },
   {
     title: "AI Writing Assistant App",
@@ -257,7 +257,7 @@ export const PROJECTS: ProjectItem[] = [
     tech: ["React.js", "Tailwind CSS", "OpenAI API", "Node.js"],
     link: "https://github.com",
     github: "https://github.com",
-    gradient: "from-purple-600 via-indigo-600 to-blue-800",
+    gradient: "from-[#182A25] via-[#14221E] to-[#101A17]",
   },
   {
     title: "Interactive Learning Hub",
@@ -266,7 +266,7 @@ export const PROJECTS: ProjectItem[] = [
     tech: ["Vue.js", "Pinia", "Tailwind CSS", "Supabase"],
     link: "https://github.com",
     github: "https://github.com",
-    gradient: "from-emerald-600 via-teal-600 to-cyan-800",
+    gradient: "from-[#14221E] via-[#1A2C27] to-[#101A17]",
   },
   {
     title: "FinTech Personal Portfolio & Tracker",
@@ -275,6 +275,6 @@ export const PROJECTS: ProjectItem[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js"],
     link: "https://github.com",
     github: "https://github.com",
-    gradient: "from-amber-600 via-orange-600 to-rose-800",
+    gradient: "from-[#1A2C27] via-[#14221E] to-[#101A17]",
   },
 ];

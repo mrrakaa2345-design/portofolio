@@ -19,7 +19,7 @@ interface CvDocItem {
 }
 
 export default function CvPage() {
-  const { lang, t } = useLanguage();
+  const { lang } = useLanguage();
   const [selectedType, setSelectedType] = useState<"ats" | "creative">("ats");
   const [zoomLevel, setZoomLevel] = useState(100);
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -30,8 +30,8 @@ export default function CvPage() {
       id: "ats",
       title: lang === "id" ? "CV Format ATS" : "ATS-Friendly CV",
       subtitle: lang === "id" ? "Standar Industri & Recruiter ATS" : "Industry Standard & ATS-Friendly",
-      tag: "ATS Optimized",
-      tagColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
+      tag: "ATS Format",
+      tagColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
       file: "/cv/CV_Raka_Febrian_ATS.jpg",
       downloadName: "CV_Raka_Febrian_ATS.jpg",
       description:
@@ -48,15 +48,15 @@ export default function CvPage() {
     creative: {
       id: "creative",
       title: lang === "id" ? "CV Format Kreatif" : "Creative Visual CV",
-      subtitle: lang === "id" ? "Desain Visual Navy & Gold" : "Modern Navy & Gold Visual Design",
+      subtitle: lang === "id" ? "Desain Visual Editorial & Gold" : "Editorial & Gold Visual Design",
       tag: "Visual Design",
-      tagColor: "bg-amber-500/10 text-amber-400 border-amber-500/30",
+      tagColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
       file: "/cv/CV_Raka_Febrian_Kreatif.jpg",
       downloadName: "CV_Raka_Febrian_Kreatif.jpg",
       description:
         lang === "id"
-          ? "Desain visual modern berkarakter dengan sidebar kontras navy gelap, aksen emas, serta tata letak artistik yang cocok untuk portofolio UI/UX dan presentasi visual."
-          : "A modern, distinctive layout with dark navy contrast sidebar, gold accents, and visual hierarchy suited for UI/UX portfolios and creative showcases.",
+          ? "Desain visual modern berkarakter dengan sidebar kontras gelap, aksen emas, serta tata letak artistik yang cocok untuk portofolio UI/UX dan presentasi visual."
+          : "A modern, distinctive layout with dark contrast sidebar, gold accents, and visual hierarchy suited for UI/UX portfolios and creative showcases.",
       highlights: [
         lang === "id" ? "Desain Sidebar Kontras" : "High-Contrast Sidebar Layout",
         lang === "id" ? "Aksen Emas Elegan" : "Sophisticated Gold Accents",
@@ -102,52 +102,46 @@ export default function CvPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080b10] text-slate-100 py-6 sm:py-10 px-3 sm:px-6 relative">
+    <div className="min-h-screen bg-[#0A0A0C] text-[#F8FAFC] py-6 sm:py-10 px-3 sm:px-6 relative">
       <div className="max-w-6xl mx-auto space-y-6">
         
         {/* Top Navigation & Action Controls Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-slate-900/90 backdrop-blur-xl border border-slate-800 shadow-xl">
+        <div className="flex flex-wrap items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-2xl">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-300 hover:text-cyan-400 transition-colors group"
+            className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-sans font-medium text-slate-400 hover:text-white transition-colors group"
           >
-            <span className="p-1.5 rounded-lg bg-slate-800 border border-slate-700 group-hover:border-cyan-500/50 transition-colors">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            <span className="p-2 rounded-xl bg-white/[0.05] border border-white/10 group-hover:border-amber-400/50 transition-colors">
+              <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
             </span>
             <span>{lang === "id" ? "Kembali ke Beranda" : "Back to Home"}</span>
           </Link>
 
           {/* Dual-Mode Format Switcher in Top Bar */}
-          <div className="flex items-center p-1 rounded-xl bg-slate-950 border border-slate-800 shadow-inner">
+          <div className="flex items-center p-1 rounded-full bg-white/[0.04] border border-white/10 shadow-inner">
             <button
               type="button"
               onClick={() => setSelectedType("ats")}
-              className={`flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              className={`flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-full text-xs font-mono font-medium transition-all cursor-pointer ${
                 selectedType === "ats"
-                  ? "bg-cyan-500 text-black shadow-md shadow-cyan-500/20"
+                  ? "bg-amber-500 text-[#0A0A0C] font-bold shadow-md shadow-amber-500/20"
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
               <span>{lang === "id" ? "Format ATS" : "ATS Format"}</span>
             </button>
 
             <button
               type="button"
               onClick={() => setSelectedType("creative")}
-              className={`flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              className={`flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-full text-xs font-mono font-medium transition-all cursor-pointer ${
                 selectedType === "creative"
-                  ? "bg-gradient-to-r from-amber-400 to-amber-500 text-black shadow-md shadow-amber-500/20"
+                  ? "bg-amber-500 text-[#0A0A0C] font-bold shadow-md shadow-amber-500/20"
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-              </svg>
               <span>{lang === "id" ? "Format Kreatif" : "Creative Format"}</span>
             </button>
           </div>
@@ -155,16 +149,12 @@ export default function CvPage() {
           <div className="flex items-center gap-3">
             <HeaderActions />
             
-            {/* Real Download Button */}
+            {/* Download Button */}
             <button
               type="button"
               onClick={() => triggerDownload(currentDoc.file, currentDoc.downloadName)}
               disabled={isDownloading}
-              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold transition-all cursor-pointer shadow-lg active:scale-95 ${
-                selectedType === "ats"
-                  ? "bg-cyan-500 hover:bg-cyan-400 text-black shadow-cyan-500/25"
-                  : "bg-amber-400 hover:bg-amber-300 text-black shadow-amber-500/25"
-              }`}
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-sans font-bold bg-amber-500 hover:bg-amber-400 text-[#0A0A0C] transition-all cursor-pointer shadow-lg shadow-amber-500/20 active:scale-95"
             >
               <svg className={`w-4 h-4 ${isDownloading ? "animate-bounce" : ""}`} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -176,7 +166,7 @@ export default function CvPage() {
             <button
               type="button"
               onClick={handlePrint}
-              className="p-2.5 rounded-full bg-slate-900 border border-slate-700/80 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer hidden sm:flex"
+              className="p-2.5 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 hover:text-white transition-colors cursor-pointer hidden sm:flex"
               title="Cetak CV"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -186,19 +176,18 @@ export default function CvPage() {
           </div>
         </div>
 
-        {/* Main 2-Column Luxury Layout */}
+        {/* Main 2-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
-          {/* Left Column: Version Cards & Profile Details (lg:col-span-4) */}
+          {/* Left Column: Version Cards & Profile Details */}
           <div className="lg:col-span-4 space-y-4">
             
-            {/* Version Picker Box */}
-            <div className="p-4 sm:p-5 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-3.5 shadow-xl">
+            <div className="p-6 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/10 space-y-4 shadow-xl">
               <div className="space-y-1">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-slate-400">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold">
                   {lang === "id" ? "PILIHAN DOKUMEN" : "DOCUMENT SELECTOR"}
                 </p>
-                <h3 className="text-sm font-bold text-white">
+                <h3 className="text-sm font-sans font-bold text-white">
                   {lang === "id" ? "Pilih Tampilan CV" : "Choose CV Presentation"}
                 </h3>
               </div>
@@ -206,14 +195,14 @@ export default function CvPage() {
               {/* ATS Selector Card */}
               <div
                 onClick={() => setSelectedType("ats")}
-                className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${
+                className={`p-4 rounded-2xl border transition-all cursor-pointer ${
                   selectedType === "ats"
-                    ? "bg-cyan-950/40 border-cyan-500/60 shadow-lg shadow-cyan-950/50 ring-1 ring-cyan-500/40"
-                    : "bg-slate-950/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/60"
+                    ? "bg-white/[0.08] border-amber-400/50 shadow-xl"
+                    : "bg-white/[0.02] border-white/[0.06] hover:border-white/20"
                 }`}
               >
-                <div className="flex items-start gap-3">
-                  <div className="relative w-12 h-16 rounded-lg overflow-hidden border border-slate-700 shrink-0 bg-white shadow-sm">
+                <div className="flex items-start gap-3.5">
+                  <div className="relative w-12 h-16 rounded-xl overflow-hidden border border-white/15 shrink-0 bg-white shadow-sm">
                     <Image
                       src="/cv/CV_Raka_Febrian_ATS.jpg"
                       alt="Thumbnail ATS"
@@ -225,7 +214,7 @@ export default function CvPage() {
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center justify-between">
                       <p className="text-xs font-bold text-white">Format ATS</p>
-                      <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      <span className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-bold">
                         Official ATS
                       </span>
                     </div>
@@ -238,7 +227,7 @@ export default function CvPage() {
                         e.stopPropagation();
                         triggerDownload("/cv/CV_Raka_Febrian_ATS.jpg", "CV_Raka_Febrian_ATS.jpg");
                       }}
-                      className="mt-2 text-[11px] font-bold text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1 cursor-pointer"
+                      className="mt-2 text-[11px] font-mono font-bold text-amber-400 hover:underline inline-flex items-center gap-1 cursor-pointer"
                     >
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -252,14 +241,14 @@ export default function CvPage() {
               {/* Creative Selector Card */}
               <div
                 onClick={() => setSelectedType("creative")}
-                className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${
+                className={`p-4 rounded-2xl border transition-all cursor-pointer ${
                   selectedType === "creative"
-                    ? "bg-amber-950/40 border-amber-500/60 shadow-lg shadow-amber-950/50 ring-1 ring-amber-500/40"
-                    : "bg-slate-950/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/60"
+                    ? "bg-white/[0.08] border-amber-400/50 shadow-xl"
+                    : "bg-white/[0.02] border-white/[0.06] hover:border-white/20"
                 }`}
               >
-                <div className="flex items-start gap-3">
-                  <div className="relative w-12 h-16 rounded-lg overflow-hidden border border-slate-700 shrink-0 bg-white shadow-sm">
+                <div className="flex items-start gap-3.5">
+                  <div className="relative w-12 h-16 rounded-xl overflow-hidden border border-white/15 shrink-0 bg-white shadow-sm">
                     <Image
                       src="/cv/CV_Raka_Febrian_Kreatif.jpg"
                       alt="Thumbnail Kreatif"
@@ -271,8 +260,8 @@ export default function CvPage() {
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center justify-between">
                       <p className="text-xs font-bold text-white">Format Kreatif</p>
-                      <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                        Visual Navy
+                      <span className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-bold">
+                        Visual Gold
                       </span>
                     </div>
                     <p className="text-[11px] text-slate-400 mt-1 leading-snug">
@@ -284,7 +273,7 @@ export default function CvPage() {
                         e.stopPropagation();
                         triggerDownload("/cv/CV_Raka_Febrian_Kreatif.jpg", "CV_Raka_Febrian_Kreatif.jpg");
                       }}
-                      className="mt-2 text-[11px] font-bold text-amber-400 hover:text-amber-300 inline-flex items-center gap-1 cursor-pointer"
+                      className="mt-2 text-[11px] font-mono font-bold text-amber-400 hover:underline inline-flex items-center gap-1 cursor-pointer"
                     >
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -298,23 +287,23 @@ export default function CvPage() {
             </div>
 
             {/* Document Details & Highlights */}
-            <div className="p-4 sm:p-5 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-3 shadow-xl">
+            <div className="p-6 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/10 space-y-3.5 shadow-xl">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-white">{currentDoc.title}</span>
-                <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold border ${currentDoc.tagColor}`}>
+                <span className="text-xs font-sans font-bold text-white">{currentDoc.title}</span>
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold border border-amber-500/30 text-amber-400 bg-amber-500/10">
                   {currentDoc.tag}
                 </span>
               </div>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-slate-400 leading-relaxed font-sans font-normal">
                 {currentDoc.description}
               </p>
 
-              <div className="pt-2 border-t border-slate-800/80 space-y-1.5">
-                <p className="text-[10px] font-mono uppercase text-slate-400">Highlights</p>
-                <ul className="space-y-1 text-xs text-slate-300">
+              <div className="pt-2 border-t border-white/[0.08] space-y-1.5">
+                <p className="text-[10px] font-mono uppercase text-amber-400 font-bold">Highlights</p>
+                <ul className="space-y-1 text-xs text-slate-200">
                   {currentDoc.highlights.map((hl, i) => (
                     <li key={i} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
                       <span>{hl}</span>
                     </li>
                   ))}
@@ -323,13 +312,13 @@ export default function CvPage() {
             </div>
 
             {/* Quick Contact Box */}
-            <div className="p-4 rounded-3xl bg-gradient-to-br from-slate-900 to-[#0c1017] border border-slate-800 space-y-2.5 text-xs shadow-xl">
+            <div className="p-5 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/10 space-y-2.5 text-xs shadow-xl">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-mono text-slate-400">Kontak Cepat</span>
                 <button
                   type="button"
                   onClick={handleCopyEmail}
-                  className="text-[11px] font-bold text-cyan-400 hover:text-cyan-300 cursor-pointer"
+                  className="text-[11px] font-mono text-amber-400 hover:underline cursor-pointer"
                 >
                   {copiedEmail ? "✓ Tersalin!" : "Salin Email"}
                 </button>
@@ -338,14 +327,14 @@ export default function CvPage() {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=mr.rakka23@gmail.com"
                 target="_blank"
                 rel="noreferrer"
-                className="font-mono text-slate-200 font-bold truncate hover:text-cyan-400 transition-colors inline-block"
+                className="font-mono text-white font-bold truncate hover:text-amber-400 transition-colors inline-block"
                 title="Kirim Email ke mr.rakka23@gmail.com"
               >
                 mr.rakka23@gmail.com
               </a>
-              <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1 border-t border-slate-800/80">
+              <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1.5 border-t border-white/[0.08]">
                 <span>WhatsApp</span>
-                <a href="https://wa.me/6288991304142" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+                <a href="https://wa.me/6288991304142" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline font-mono">
                   088991304142
                 </a>
               </div>
@@ -353,32 +342,31 @@ export default function CvPage() {
 
           </div>
 
-          {/* Right Column: High-Definition Canvas (lg:col-span-8) */}
+          {/* Right Column: High-Definition Canvas */}
           <div className="lg:col-span-8 space-y-4">
             
-            {/* Toolbar for Zoom & Actions */}
-            <div className="flex items-center justify-between px-4 py-2.5 rounded-2xl bg-slate-900/80 border border-slate-800 text-xs">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                <span className="text-slate-300 font-medium">{currentDoc.title}</span>
+            <div className="flex items-center justify-between px-5 py-3 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/10 text-xs">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                <span className="text-white font-medium">{currentDoc.title}</span>
                 <span className="text-slate-500 font-mono text-[11px] hidden sm:inline">({currentDoc.downloadName})</span>
               </div>
 
               {/* Zoom Controls */}
               <div className="flex items-center gap-2">
-                <div className="flex items-center bg-slate-950 px-2 py-0.5 rounded-lg border border-slate-800 text-[11px] font-mono">
+                <div className="flex items-center bg-[#0A0A0C] px-2 py-0.5 rounded-lg border border-white/10 text-[11px] font-mono">
                   <button
                     type="button"
                     onClick={() => setZoomLevel(Math.max(60, zoomLevel - 10))}
-                    className="px-2 py-0.5 text-slate-400 hover:text-cyan-400 font-bold cursor-pointer"
+                    className="px-2 py-0.5 text-slate-400 hover:text-white font-bold cursor-pointer"
                   >
                     -
                   </button>
-                  <span className="w-10 text-center text-slate-200">{zoomLevel}%</span>
+                  <span className="w-10 text-center text-white">{zoomLevel}%</span>
                   <button
                     type="button"
                     onClick={() => setZoomLevel(Math.min(140, zoomLevel + 10))}
-                    className="px-2 py-0.5 text-slate-400 hover:text-cyan-400 font-bold cursor-pointer"
+                    className="px-2 py-0.5 text-slate-400 hover:text-white font-bold cursor-pointer"
                   >
                     +
                   </button>
@@ -386,22 +374,22 @@ export default function CvPage() {
                 <button
                   type="button"
                   onClick={() => setZoomLevel(100)}
-                  className="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-[11px] font-mono text-slate-200 border border-slate-700 cursor-pointer"
+                  className="px-3 py-1 rounded-lg bg-white/[0.06] hover:bg-white/[0.1] text-[11px] font-mono text-white border border-white/10 cursor-pointer"
                 >
                   Reset
                 </button>
               </div>
             </div>
 
-            {/* Document Canvas Sheet (Naturally tall for perfect scrolling & crystal clear HD text) */}
-            <div className="flex justify-center p-3 sm:p-6 bg-[#11141c] rounded-3xl border border-slate-800/90 shadow-2xl overflow-y-auto max-h-[85vh] custom-scrollbar">
+            {/* Document Canvas Sheet */}
+            <div className="flex justify-center p-4 sm:p-7 bg-black/60 rounded-3xl border border-white/10 shadow-2xl overflow-y-auto max-h-[85vh] custom-scrollbar">
               <div
                 style={{
                   width: "100%",
                   maxWidth: `${Math.round(760 * (zoomLevel / 100))}px`,
                   transition: "max-width 0.25s ease-out",
                 }}
-                className="rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.95)] border border-slate-700/60 bg-white group my-2"
+                className="rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white group my-2"
               >
                 <div className="w-full bg-white relative">
                   <Image
@@ -417,14 +405,14 @@ export default function CvPage() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="p-3.5 bg-[#11141c] border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-                  <span className="font-mono text-[11px] text-slate-300">
+                <div className="p-4 bg-[#0A0A0C] border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                  <span className="font-mono text-[11px] text-white">
                     {currentDoc.title} • HD 2048px
                   </span>
                   <button
                     type="button"
                     onClick={() => triggerDownload(currentDoc.file, currentDoc.downloadName)}
-                    className="px-4 py-2 rounded-full bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold text-xs shadow-xl transition-colors flex items-center gap-2 cursor-pointer"
+                    className="px-4.5 py-2 rounded-full bg-amber-500 hover:bg-amber-400 text-[#0A0A0C] font-bold text-xs transition-colors flex items-center gap-2 cursor-pointer shadow-md shadow-amber-500/20"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -436,20 +424,20 @@ export default function CvPage() {
             </div>
 
             {/* Bottom Format Download Links */}
-            <div className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs">
+            <div className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl bg-white/[0.03] border border-white/10 text-xs">
               <span className="text-slate-400 font-mono">Tersedia 2 format siap unduh:</span>
               <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={() => triggerDownload("/cv/CV_Raka_Febrian_ATS.jpg", "CV_Raka_Febrian_ATS.jpg")}
-                  className="px-3.5 py-1.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500 text-cyan-300 font-bold transition-all cursor-pointer flex items-center gap-1.5"
+                  className="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 hover:border-amber-400 text-amber-400 font-medium transition-all cursor-pointer flex items-center gap-1.5"
                 >
                   📄 Unduh CV ATS
                 </button>
                 <button
                   type="button"
                   onClick={() => triggerDownload("/cv/CV_Raka_Febrian_Kreatif.jpg", "CV_Raka_Febrian_Kreatif.jpg")}
-                  className="px-3.5 py-1.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-500 text-amber-300 font-bold transition-all cursor-pointer flex items-center gap-1.5"
+                  className="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 hover:border-amber-400 text-amber-400 font-medium transition-all cursor-pointer flex items-center gap-1.5"
                 >
                   🎨 Unduh CV Kreatif
                 </button>
@@ -464,4 +452,3 @@ export default function CvPage() {
     </div>
   );
 }
-
